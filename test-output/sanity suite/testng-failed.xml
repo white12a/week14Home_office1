@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [sanity suite]">
+  <test thread-count="5" name="VisaTest(failed)">
+    <parameter name="durationOfStay" value="longer than 6 months"/>
+    <parameter name="reason1" value="Tourism"/>
+    <parameter name="planning" value="Health and care professional"/>
+    <parameter name="reason2" value="Work, academic visit or business"/>
+    <parameter name="immigration" value="yes"/>
+    <parameter name="reason3" value="Join partner or family for a long stay"/>
+    <parameter name="nationality2" value="Chile"/>
+    <parameter name="nationality3" value="Colombia"/>
+    <parameter name="expectedMessage1" value="You will not need a visa to come to the UK"/>
+    <parameter name="nationality1" value="Australia"/>
+    <parameter name="expectedMessage2" value="You need a visa to work in health and care"/>
+    <parameter name="expectedMessage3" value="You’ll need a visa to join your family or partner in the UK"/>
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="gov.uk.check.visa.testsuite.VisaConfirmationTest">
+        <methods>
+          <include name="inIt"/>
+          <include name="tearDown"/>
+          <include name="aColumbianNationalComingToTheUKToJoinAPartnerForALongStayTheyDoHaveAnArticle10Or20Card" invocation-numbers="0"/>
+          <include name="anAustralianComingToUKForTourism" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- gov.uk.check.visa.testsuite.VisaConfirmationTest -->
+    </classes>
+  </test> <!-- VisaTest(failed) -->
+</suite> <!-- Failed suite [sanity suite] -->

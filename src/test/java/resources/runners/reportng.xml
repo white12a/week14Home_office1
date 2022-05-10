@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="testsuite" verbose="1">
+    <listeners>
+        <listener class-name="gov.uk.check.visa.customlisteners.CustomListeners"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+    <test name="Test Suite">
+        <parameter name="nationality1" value="Australia"></parameter>
+        <parameter name="nationality2" value="Chile"></parameter>
+        <parameter name="nationality3" value="Colombia"></parameter>
+        <parameter name="reason1" value="Tourism or visiting family and friends"></parameter>
+        <parameter name="reason2" value="Work, academic visit or business"></parameter>
+        <parameter name="reason3" value="Join partner or family for a long stay"></parameter>
+        <parameter name="expectedMessage1" value="You will not need a visa to come to the UK"></parameter>
+        <parameter name="expectedMessage2" value="You need a visa to work in health and care"></parameter>
+        <parameter name="expectedMessage3" value="You’ll need a visa to join your family or partner in the UK"></parameter>
+        <parameter name="durationOfStay" value="longer than 6 months"></parameter>
+        <parameter name="planning" value="Health and care professional"></parameter>
+        <parameter name="immigration" value="yes"></parameter>
+        <classes>
+            <class name="gov.uk.check.visa.testsuite.VisaConfirmationTest"/>
+        </classes>
+    </test>
+</suite>
